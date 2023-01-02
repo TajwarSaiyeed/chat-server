@@ -3,8 +3,13 @@ const express = require("express");
 const cors = require("cors");
 const socketio = require("socket.io");
 const app = express();
-const port = process.env.PORT;
-app.use(cors());
+const port = process.env.PORT || 8000;
+app.use(
+  cors({
+    origin: ["http://localhost:3000", "https://chat-client-abid.netlify.app/"],
+    credentials: true,
+  })
+);
 
 const users = [{}];
 
