@@ -1,20 +1,10 @@
 const http = require("http");
 const express = require("express");
 const cors = require("cors");
-const socketio = require("socket.io", http({
-  cors: {
-    origin: "*",
-    methods: ["GET", "POST"],
-  },
-}));
+const socketio = require("socket.io");
 const app = express();
 const port = process.env.PORT;
-app.use(
-  cors({
-    origin: "*",
-    credentials: true,
-  })
-);
+app.use(cors());
 
 const users = [{}];
 
