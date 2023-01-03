@@ -6,7 +6,11 @@ const app = express();
 const port = process.env.PORT || 8000;
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://chat-client-abid.netlify.app/"],
+    origin: [
+      "http://localhost:3000",
+      "https://chat-client-abid.netlify.app/",
+      "chat-app-tajwar.netlify.app",
+    ],
     credentials: true,
   })
 );
